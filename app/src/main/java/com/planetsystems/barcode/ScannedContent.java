@@ -13,6 +13,7 @@ public class ScannedContent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanned_content);
+        setTitle("Scanned Content");
 
         content = findViewById(R.id.scan_content);
 
