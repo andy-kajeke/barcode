@@ -26,7 +26,7 @@ import java.util.Hashtable;
 public class MainActivity extends AppCompatActivity {
 
     private EditText editTextProductId;
-    private Button buttonGenerate, buttonScan;
+    private Button buttonGenerate, buttonScan, buttonID;
     private ImageView imageViewResult;
 
     @Override
@@ -38,12 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         editTextProductId = findViewById(R.id.editTextProductId);
-        imageViewResult = findViewById(R.id.imageViewResult);
+        //imageViewResult = findViewById(R.id.imageViewResult);
         buttonGenerate = findViewById(R.id.buttonGenerate);
         buttonGenerate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonGenerate_onClick(view);
+                Intent id = new Intent(MainActivity.this, GenerateBarcode.class);
+                startActivity(id);
             }
         });
         buttonScan = findViewById(R.id.buttonScan);
@@ -53,6 +54,15 @@ public class MainActivity extends AppCompatActivity {
                 buttonScan_onClick(view);
             }
         });
+
+//        buttonID = findViewById(R.id.buttonID);
+//        buttonID.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent id = new Intent(MainActivity.this, IdCardImage.class);
+//                startActivity(id);
+//            }
+//        });
     }
 
     private void buttonGenerate_onClick(View view) {
@@ -90,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         if (intentResult != null) {
             String productId = intentResult.getContents();
             Toast.makeText(getApplicationContext(), productId, Toast.LENGTH_LONG).show();
+
             Intent scan = new Intent(this, ScannedContent.class);
             scan.putExtra("scan_content", productId);
             startActivity(scan);

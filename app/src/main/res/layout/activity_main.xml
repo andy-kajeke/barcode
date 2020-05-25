@@ -8,18 +8,81 @@
     android:orientation="vertical"
     tools:ignore="HardcodedText">
 
-    <EditText
-        android:id="@+id/editTextProductId"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/product_id"
-        android:inputType="textPersonName" />
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="National Barcoding Services"
+            android:layout_marginTop="15dp"
+            android:textColor="#000fff"
+            android:textSize="20dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/meue1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Overview of GS1"
+                android:layout_marginTop="20dp"
+                android:textColor="#000000"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/meue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Join BUBU Programme"
+                android:layout_marginTop="40dp"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:layout_below="@+id/meue1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="GS1 Specifications"
+                android:textSize="16dp"
+                android:layout_marginTop="40dp"
+                android:textColor="#000000"
+                android:id="@+id/meue3"
+                android:layout_below="@id/meue2"/>
+
+            <TextView
+                android:id="@+id/meue4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Membership"
+                android:layout_marginTop="40dp"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:layout_below="@+id/meue3"/>
+        </RelativeLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <Button
             android:id="@+id/buttonGenerate"
@@ -35,10 +98,17 @@
             android:layout_weight="1"
             android:text="@string/scan" />
     </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
 
-    <ImageView
-        android:id="@+id/imageViewResult"
-        android:layout_width="match_parent"
-        android:layout_height="335dp" />
+<!--        <Button-->
+<!--            android:id="@+id/buttonID"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="SCAN ID CARD" />-->
+<!--    </LinearLayout>-->
 
 </LinearLayout>
